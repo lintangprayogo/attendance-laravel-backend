@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Company;
-use App\Models\Permission;
 use App\Models\User;
-use Database\Factories\PermissionFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
