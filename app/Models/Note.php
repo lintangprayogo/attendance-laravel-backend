@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Permission extends Model
+class note extends Model
 {
-    use HasFactory;
     //
+    use HasFactory;
+
     protected $fillable = [
-        'user_id',
-        'date_permissions',
-        'reason',
-        'image',
-        'is_approved'
+        'title',
+        'note',
+
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
-
 }

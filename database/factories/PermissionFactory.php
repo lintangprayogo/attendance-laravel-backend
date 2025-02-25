@@ -18,7 +18,7 @@ class PermissionFactory extends Factory
     {
         return [
             'user_id' => 1, // Creates a related user if needed
-            'date_permissions' => $this->faker->date(),
+            'date_permission' => $this->faker->date(),
             'reason' => $this->faker->paragraph(),
             'image' => $this->faker->imageUrl(), // Generates a fake image URL
             'is_approved' => $this->faker->boolean(),
