@@ -17,10 +17,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('/company', [CompanyController::class, "show"]);
 
-    Route::post('/checkin', [AttendanceController::class, 'checkin'])->middleware('auth:sanctum');
+    Route::post('/checkin', [AttendanceController::class, 'checkin']);
 
-    Route::post('/checkout', [AttendanceController::class, 'checkout'])->middleware('auth:sanctum');
+    Route::post('/checkout', [AttendanceController::class, 'checkout']);
 
-    Route::get('/is-checkin', [AttendanceController::class, 'isCheckedin'])->middleware('auth:sanctum');
+    Route::get('/is-checkin', [AttendanceController::class, 'isCheckedin']);
 
+    Route::post('/update-profile', [AuthContrroller::class, 'updateProfile']);
 });

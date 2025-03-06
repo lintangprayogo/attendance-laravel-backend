@@ -30,7 +30,12 @@ class AuthContrroller extends Controller
         }
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        return response(["user" => $user, "token" => $token]);
+
+        return response()->json([
+            'message' => 'Login success',
+            'access_token' => $token,
+            'user' => $user,
+        ], 200);
     }
 
     public function logout(Request $request){
@@ -39,6 +44,21 @@ class AuthContrroller extends Controller
         return response(['message'=>"logout success"]);
 
     }
+    
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'face_embedding' => 'required',
+        ]);
+        $user = $request->user();
+        $face_embedding = $request->face_embedding;
+        $user->face_embedding = $face_embedding;
+        $user->save();
 
+        return response([
+            'message' => 'Profile updated',
+            'user' => $user,
+        ], 200);
+    }
 
 }

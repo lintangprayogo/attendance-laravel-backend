@@ -18,4 +18,6 @@ class AttendanceController extends Controller
             })->orderBy('id', 'desc')->paginate(10);
         return view('pages.attendance.index', compact('attendances'));
     }
+
+   
 }
